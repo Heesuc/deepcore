@@ -4,7 +4,8 @@
     pageEncoding="UTF-8"%>    
 <!DOCTYPE html>
 
-<script type="text/javascript" src="/js/main/main.js"></script>
+<script src="/js/common/jquery.js"></script>
+<script src="/js/main/main.js"></script>
  
 <html>
 <head>
