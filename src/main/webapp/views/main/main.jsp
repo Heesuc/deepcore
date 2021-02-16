@@ -4,7 +4,7 @@
     pageEncoding="UTF-8"%>    
 <!DOCTYPE html>
 
-<script type="text/javascript" src="resources/js/main/practice.js"></script>
+<script type="text/javascript" src="/js/main/main.js"></script>
  
 <html>
 <head>
