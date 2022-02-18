@@ -22,6 +22,7 @@
     <p>${status.count} : <c:out value="${mainModel.column3}" /></p><br>
 </c:forEach>
 
+
 <form id="input_test">
     <input type="hidden" name="input1" id="input1" value="val1"/>
     <input type="hidden" name="input2" id="input2" value="val2"/>

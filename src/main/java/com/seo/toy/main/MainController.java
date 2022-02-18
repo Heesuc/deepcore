@@ -13,6 +13,7 @@ public class MainController {
 	@GetMapping("/")
 	public String test(Model model) {
 		model.addAttribute("mainModelList", mainService.selectTest());
+		System.out.println(model.getAttribute("mainModelList"));
 		return "main/main";
 	}
 }

@@ -12,14 +12,6 @@ function ajaxTest(obj) {
     })
 }
 
-//////////////////////////////////////////////////
-
-/**
- * common javascript file
- *
- * @author kuckjwi
- * @since August 16, 2020
- */
 'use strict';
 const API_DOMAIN = {
     DEV: 'https://dapi.thankskorea.co.kr',
@@ -192,3 +184,40 @@ const requester = new Requester();
 const pagingHelper = new PagingHelper();
 const validator = new Validator();
 ////////////////////////////////////////////////////////////
+
+
+// check_bok : 전체선택 기능
+function set_checkbox(checkbox_name) {
+    check_all = document.getElementById(checkbox_name+"_all")
+    checkboxes = document.querySelectorAll("input[name="+ checkbox_name + "]");
+
+    check_all.addEventListener("click", event => {
+        for(var i=0; i<checkboxes.length; i++) {
+            checkboxes[i].checked = check_all.checked;
+        }
+    })
+
+    for(var i=0; i<checkboxes.length; i++) {
+        checkboxes[i].addEventListener("click", event => {
+            for(var j=0; j<checkboxes.length; j++) {
+                if (!checkboxes[j].checked) {
+                    check_all.checked = false;
+                    break;
+                }
+                if (j == checkboxes.length-1)
+                    check_all.checked = true;
+            }
+        })
+    }
+}
+
+//check_bok : 체크된 데이터만 배열로 묶어서 전달
+function get_checked_datas(checkbox_name) {
+    checkboxes = document.querySelectorAll("input[name="+ checkbox_name + "]");
+    var checked_data = [];
+    for(var i=0; i<checkboxes.length; i++) {
+        if(checkboxes[i].checked) 
+            checked_data.push(checkboxes[i].value);
+    }
+    return checked_data;
+}
